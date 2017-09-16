@@ -18,7 +18,11 @@ init_rrtools <- function(path, ...){
   dots <- list(...)
   text <- lapply(seq_along(dots), function(i) {
     key <- names(dots)[[i]]
-    val <- dots[[i]]
+    if(key == "textGH"){
+      val <- "secret"
+    } else {
+      val <- dots[[i]]
+    }
     paste0(key, ": ", val)
   })
   # collect into single text string
