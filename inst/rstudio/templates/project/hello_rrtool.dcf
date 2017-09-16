@@ -5,7 +5,7 @@ OpenFiles: ProjectTemplate
 Parameter: textGH
 Widget: TextInput
 Label: GitHub Token
-Default: 19844b77b08fec10e397ee3d13e769d4e96cb798
+Default:
 Position: right
 
 Parameter: checkGH
