@@ -43,20 +43,39 @@ init_rrtools <- function(path, ...){
   } else {
     MIT_string <- ""
   }
+  if(isTRUE(dots[["checkGH"]]) & length(dots[["textGH"]]) > 0){
+    GH_token  <- dots[["textGH"]]
+    GH_private <- dots[["checkGHPrivate"]]
+    GH_string <- paste0('devtools::use_github(auth_token = "',
+                         GH_token,'", private = ',
+                         GH_private,')',collapse='')
+  }
+  if(isTRUE(dots[["checkREADME"]])){
+    README_string <- 'rrtools::use_readme_rmd()'
+  }
 
   # build .Rprofile that executes all of the rrtools options
   profile_header <- c(
     '#message("Executing .Rprofile setup")',
+    # devtools::funct calls are to try to emulate "build & Clean" in Rstudio, not 100%
     'if (Sys.getenv("RSTUDIO") == "1") local({',
-      'on.exit(file.rename(".Rprofile","Rprofile_init"))', # rename .Rprofile
+      'on.exit({
+          message("ON EXIT!!")
+          devtools::build()
+          devtools::install()
+          devtools::load_all()
+          file.rename(".Rprofile","Rprofile_init")
+      })', # rename .Rprofile
       '## Setup here',
       analysis_string,
       MIT_string,
+      README_string,
+      GH_string,
     '})'
   )
   rprofile_text <- paste(profile_header, collapse = "\n")
 
-  use_compendium(path, dots)
+  use_compendium2(path, dots)
 
   writeLines(contents, con = file.path(path, "ProjectTemplate"))
   writeLines(rprofile_text, con = file.path(path, ".Rprofile"))

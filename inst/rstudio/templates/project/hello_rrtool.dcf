@@ -5,12 +5,12 @@ OpenFiles: ProjectTemplate
 Parameter: textGH
 Widget: TextInput
 Label: GitHub Token
-Default: xxxxx
+Default: 19844b77b08fec10e397ee3d13e769d4e96cb798
 Position: right
 
 Parameter: checkGH
 Widget: CheckboxInput
-Label: Use GH README?
+Label: Use GitHub?
 Default: Off
 Position: left
 
@@ -20,11 +20,30 @@ Label: Use Folder Structure?
 Default: Off
 Position: left
 
+Parameter: selectAnalysis
+Widget: SelectInput
+Label: Select Directory Layout
+Fields: top_level, inst, vignettes
+Default:
+Position: left
+
+Parameter: checkGHPrivate
+Widget: CheckboxInput
+Label: Private Github?
+Default: Off
+Position: right
+
 Parameter: checkMIT
 Widget: CheckboxInput
 Label: Use MIT License
 Default: Off
 Position: left
+
+Parameter: checkREADME
+Widget: CheckboxInput
+Label: Use GH README?
+Default: Off
+Position: right
 
 Parameter: checkCI
 Widget: CheckboxInput
@@ -38,13 +57,6 @@ Label: Select CI Type
 Fields: None, Travis CI, Circile CI
 Default: None
 Position: left
-
-Parameter: selectAnalysis
-Widget: SelectInput
-Label: Select Directory Layout
-Fields: top_level, inst, vignettes
-Default:
-Position: right
 
 Parameter: textName
 Widget: TextInput
