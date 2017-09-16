@@ -17,7 +17,6 @@ globalVariables(c("gh", "opts", "getProjectDir", "libDir", ".packrat_mutables", 
 #' @export
 use_compendium <- function(path, description = getOption("devtools.desc"),
                            check = FALSE, rstudio = TRUE, quiet = FALSE){
-
   devtools::create(path,
                    description = getOption("devtools.desc"),
                    check,

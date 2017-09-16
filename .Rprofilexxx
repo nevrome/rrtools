@@ -1,0 +1,7 @@
+message("HELLO!!!!!!!!!!!!!!!!!!!!")
+if (Sys.getenv("RSTUDIO") == "1") local({
+# on.exit(file.remove("/tmp/project_init.R"))
+## Setup here
+message("inside!!!!!!!!!!!!!!!!!!!!")
+#use_analysis(location = dots[["selectAnalysis"]])
+})
