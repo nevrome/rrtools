@@ -16,3 +16,6 @@ knitr::opts_chunk$set(
 ## rrtools: Tools for Writing Reproducible Research in R
 
 go to: [https://github.com/benmarwick/rrtools](https://github.com/benmarwick/rrtools)
+
+Project Template Example:
+![](https://github.com/mrecos/rrtools/blob/master/Screenshot%202017-09-16%2010.21.06.png)
