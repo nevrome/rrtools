@@ -1,18 +1,18 @@
 Binding: init_rrtools
-Title: Initiate rrtools Compendium Template
+Title: Basic rrtools Compendium
 OpenFiles: ProjectTemplate
 
-Parameter: textGH
+Parameter: textName
 Widget: TextInput
-Label: GitHub Token
+Label: Name
+Default: First Last
+Position: left
+
+Parameter: textEmail
+Widget: TextInput
+Label: Email Address
 Default:
 Position: right
-
-Parameter: checkGH
-Widget: CheckboxInput
-Label: Use GitHub?
-Default: Off
-Position: left
 
 Parameter: checkAnalysis
 Widget: CheckboxInput
@@ -22,14 +22,26 @@ Position: left
 
 Parameter: selectAnalysis
 Widget: SelectInput
-Label: Select Directory Layout
+Label: Folders Structure
 Fields: top_level, inst, vignettes
 Default:
+Position: right
+
+Parameter: checkGH
+Widget: CheckboxInput
+Label: Use GitHub? (req. token)
+Default: Off
 Position: left
+
+Parameter: textGH
+Widget: TextInput
+Label: GitHub Token
+Default:
+Position: right
 
 Parameter: checkGHPrivate
 Widget: CheckboxInput
-Label: Private Github?
+Label: Private Github Repo?
 Default: Off
 Position: right
 
@@ -41,31 +53,20 @@ Position: left
 
 Parameter: checkREADME
 Widget: CheckboxInput
-Label: Use GH README?
-Default: Off
-Position: right
-
-Parameter: checkCI
-Widget: CheckboxInput
-Label: Use CI?
+Label: Use GH README.rmd?
 Default: Off
 Position: left
 
-Parameter: selectCI
-Widget: SelectInput
-Label: Select CI Type
-Fields: None, Travis CI, Circile CI
-Default: None
-Position: left
+#Parameter: checkCI
+#Widget: CheckboxInput
+#Label: Use CI?
+#Default: Off
+#Position: left
 
-Parameter: textName
-Widget: TextInput
-Label: Name
-Default: First Last
-Position: right
+#Parameter: selectCI
+#Widget: SelectInput
+#Label: Select CI Type
+#Fields: None, Travis CI, Circile CI
+#Default: None
+#Position: left
 
-Parameter: textEmail
-Widget: TextInput
-Label: Email Address
-Default:
-Position: right
