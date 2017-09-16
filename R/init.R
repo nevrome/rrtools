@@ -49,9 +49,13 @@ init_rrtools <- function(path, ...){
     GH_string <- paste0('devtools::use_github(auth_token = "',
                          GH_token,'", private = ',
                          GH_private,')',collapse='')
+  } else {
+    GH_string <- NULL
   }
   if(isTRUE(dots[["checkREADME"]])){
     README_string <- 'rrtools::use_readme_rmd()'
+  } else {
+    README_string <- NULL
   }
 
   # build .Rprofile that executes all of the rrtools options
@@ -60,7 +64,6 @@ init_rrtools <- function(path, ...){
     # devtools::funct calls are to try to emulate "build & Clean" in Rstudio, not 100%
     'if (Sys.getenv("RSTUDIO") == "1") local({',
       'on.exit({
-          message("ON EXIT!!")
           devtools::build()
           devtools::install()
           devtools::load_all()
